@@ -1,0 +1,312 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Ubuntu", sans-serif;
+}
+
+body {
+    background-attachment: fixed;
+}
+
+/* HEADER */
+
+header {
+    width: 100%;
+    background-color: rgb(0, 0, 0);
+    display: flex;
+    padding: 10px;
+    align-items: center;
+    justify-content: space-around;
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    left: 0;
+}
+
+header h1 {
+    position: fixed;
+    left: 15%;
+    color: #fff;
+    font-size: 30px;
+
+    background: linear-gradient(45deg, red, rgb(218, 3, 3), rgb(8, 95, 194), rgb(170, 24, 24));
+    background-size: 400% 100%;
+    animation: degrade 10s linear infinite alternate;
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+@keyframes degrade {
+    0% {
+        background-position-x: 0%;
+    }
+
+    100% {
+        background-position-x: 400%;
+    }
+}
+
+header ul {
+    margin-left: 800px;
+    display: flex;
+    gap: 20px;
+    list-style-type: none;
+    cursor: pointer;
+}
+
+header ul li {
+    width: 50px;
+    height: 50px;
+
+    background-color: #fff;
+    border: none;
+    border-radius: 60px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+    transition: .2s;
+}
+
+ul li:hover {
+    width: 180px;
+}
+
+ul li span {
+    position: absolute;
+}
+
+ul li .icon {
+    color: #000000;
+    font-size: 25px;
+    transition: .2s;
+}
+
+ul li .text {
+    color: #030303;
+    font-size: 20px;
+
+    transform: scale(0);
+    transition: .2s;
+    transition-delay: .1s;
+}
+
+ul li:hover .text {
+    transform: scale(1);
+}
+
+ul li:hover .icon {
+    transform: scale(0);
+}
+
+ul li::before {
+    content: '';
+    position: absolute;
+    background-image: linear-gradient(45deg, var(--cor1), var(--cor2));
+    inset: 0;
+    opacity: 0;
+    border-radius: 60px;
+}
+
+ul li:hover::before {
+    opacity: 1;
+}
+
+/* MAIN */
+
+main {
+    width: 100%;
+    height: 100%;
+}
+
+main .background {
+    background-image: url(src/img/Bg-1.jpg);
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+/* SECTION Lista */
+
+main section .lista {
+    width: 45%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 20px 40px;
+    margin-top: 100px;
+    backdrop-filter: blur(100px);
+    box-shadow: 3px 5px 20px #171616;
+    background-color: rgba(158, 155, 155, 0.918);
+    z-index: 1;
+}
+
+main section .lista h2 {
+    color: #000000;
+    text-align: center;
+    font-size: 35px;
+    margin-bottom: 20px;
+
+    background: linear-gradient(45deg, red, rgb(218, 3, 3), rgb(8, 95, 194), rgb(170, 24, 24));
+    background-size: 400% 100%;
+    animation: degrade 10s linear infinite alternate;
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+main section .lista input {
+    padding: 10px;
+    outline: none;
+    background-color: #ffffffb5;
+    border: 2px solid black;
+    border-radius: 5px;
+
+    font-size: 20px;
+    height: 45px;
+    padding: 5px;
+}
+
+#produto,
+#quantidade,
+#preço,
+::placeholder {
+    padding-left: 5px;
+}
+
+main section .buttons {
+    display: flex;
+    gap: 15px;
+}
+
+main section .buttons button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    transition: .2s;
+}
+
+/* Classe do JavasScript */
+.remover {
+    width: 90%;
+    height: 30px;
+    background-color: rgb(241 23 7 / 83%);
+    color: #fff;
+    font-size: 15px;
+    border: 1px solid black;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.remover:hover {
+    background-color: #f11707a8;
+}
+
+/* Fim da classe do JavasScript */
+
+main section .buttons button:hover {
+    opacity: .5;
+}
+
+main section .buttons button.button-add {
+    width: 60%;
+    height: 45px;
+    border-radius: 5px;
+    outline: none;
+    border: 2px solid #000000;
+    font-size: 18px;
+    margin: 20px 0;
+    background-color: #1606f3;
+    color: #fff;
+    transition: background-color 0.5s ease;
+    cursor: pointer;
+}
+
+main section .buttons button.button-limp {
+    width: 60%;
+    height: 45px;
+    border-radius: 5px;
+    outline: none;
+    border: 2px solid #000000;
+    font-size: 18px;
+    margin: 20px 0;
+    background-color: #b30000;
+    color: #fff;
+    transition: background-color 0.5s ease;
+    cursor: pointer;
+}
+
+/* SECTION Tabela */
+
+main section .tabela {
+    width: 45%;
+    height: 25px;
+    margin-top: 20px;
+    margin-left: 27.5%;
+    display: table;
+
+    border: 2px solid black;
+    background-color: rgba(211, 211, 211, 0.975);
+    box-shadow: 3px 5px 20px #171616;
+    border-radius: 2px;
+    overflow-x: auto;
+    backdrop-filter: blur(100px);
+    box-shadow: 1px 5px 10px #171616;
+}
+
+main section .tabela table tr th {
+    padding: 5px 29px;
+    border: 1.5px solid #5b59595a;
+    text-align: center;
+    font-size: 15px;
+    width: 100px;
+    background-color: #D5E4E5;
+}
+
+main section .tabela table tr td {
+    padding: 1.5px;
+    border: 1.5px solid #5b59595a;
+    text-align: center;
+    font-size: 15px;
+}
+
+table input[type="text"],
+table input[type="number"] {
+    width: 100%;
+    text-align: center;
+    background-color: transparent;
+    border: none;
+}
+
+h3 {
+    width: 45%;
+    height: 40px;
+    font-size: 20px;
+    font-weight: 900;
+    margin: 20px auto;
+    color: #000000;
+    
+    border-radius: 5px;
+    border: 2px solid black;
+    background-color: rgba(83, 81, 81, 0.582);
+    backdrop-filter: blur(20px);
+    box-shadow: 1px 5px 10px #171616;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    font-variant: small-caps;
+}
+  
